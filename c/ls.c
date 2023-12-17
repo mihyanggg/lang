@@ -20,17 +20,15 @@ int main(int argc, char* argv[]) {
             else
                 printf("%s  ", dir->d_name);
         }
-    closedir(dp);
+        closedir(dp);
     }
     else {
-        while( (c = getopt(argc, argv, ":abc:d")) != -1) {
+        while( (c = getopt(argc, argv, "a")) != -1) {
             switch(c) {
                 case 'a':
                     while (dir = readdir(dp)) {
                         printf("%s  ", dir->d_name);
                     }
-                    break;
-                case ':':
                     break;
                 case '?':
                     printf("Does not support %c\n", optopt);
@@ -38,6 +36,7 @@ int main(int argc, char* argv[]) {
             closedir(dp);
         }
     }
+
     printf("\n");
 
     return 0;
