@@ -1,5 +1,5 @@
 echo
-touch
 ls
+touch
 find
 grep
